@@ -42,6 +42,8 @@
         app:layout_constraintTop_toBottomOf="@id/LoginLogo"
         android:textSize="35sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/inder"
+
         />
 
     <androidx.constraintlayout.widget.Guideline
@@ -80,7 +82,6 @@
             android:id="@+id/LoginTILuserName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxBackgroundMode="filled"
             app:boxBackgroundColor="@android:color/transparent"
             app:boxCornerRadiusTopStart="15dp"
             app:boxCornerRadiusTopEnd="15dp"
@@ -120,7 +121,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
-            app:boxBackgroundMode="filled"
             app:boxBackgroundColor="@android:color/transparent"
             app:boxCornerRadiusTopStart="15dp"
             app:boxCornerRadiusTopEnd="15dp"
