@@ -106,7 +106,6 @@
                 android:hint="Teléfono, correo, usuario..."
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
-                android:background=""
                 />
 
         </com.google.android.material.textfield.TextInputLayout>

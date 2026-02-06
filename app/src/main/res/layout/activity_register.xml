@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    tools:context=".Register">
 
     <View
         android:id="@+id/splashDegradado"
@@ -79,7 +79,7 @@
         app:cardBackgroundColor="@android:color/white">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RegisterTILuserName"
+            android:id="@+id/RegisterTILEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:boxBackgroundColor="@android:color/transparent"
@@ -94,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Teléfono, correo, usuario"
                 android:inputType="textPersonName"
+                android:textSize="12dp"
                 android:textColor="@color/black"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +118,7 @@
         app:cardBackgroundColor="@android:color/white">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RegisterTILpassword"
+            android:id="@+id/RegisterTILPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
@@ -132,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
+                android:textSize="12dp"
                 android:textColor="@color/black"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -154,7 +156,7 @@
         app:cardBackgroundColor="@android:color/white">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/RegisterTILpassword2"
+            android:id="@+id/RegisterTILPasswordConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
@@ -169,6 +171,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Confirmar contraseña"
                 android:inputType="textPassword"
+                android:textSize="12dp"
                 android:textColor="@color/black"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -201,7 +204,7 @@
         android:textColor="@color/black"/>
 
     <TextView
-        android:id="@+id/RegisterTVCuenta"
+        android:id="@+id/RegisterTVLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
