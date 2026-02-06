@@ -24,4 +24,12 @@
 
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="verde1">#b2c55b</color>
+    <color name="verde2">#b2c55b</color>
+    <color name="verde3">#65975f</color>
+    <color name="marronclaro">#edb26b</color>
+    <color name="Adopt">#999DA0</color>
+    <color name="Placeholder">#8396A7</color>
+    <color name="azul1">#5BB4B0</color>
+    <color name="azul2">#79C680</color>
 </resources>
