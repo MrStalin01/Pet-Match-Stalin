@@ -110,6 +110,8 @@
                 android:hint="Teléfono, correo, usuario..."
                 android:inputType="textPersonName"
                 android:textSize="12dp"/>
+                android:textColor="@color/black"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 
