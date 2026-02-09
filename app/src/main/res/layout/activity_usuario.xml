@@ -29,7 +29,7 @@
         android:fontFamily="@font/inder"
         android:text="@string/app_name"
         android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textSize="45sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,8 +69,8 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/IniciarSesionButton"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="70dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="150dp"
         android:text="Iniciar Sesión"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@id/UsuariosGLv2"
@@ -86,7 +86,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/CrearCuentaButton"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_marginTop="16dp"
         android:text="Crear Cuenta"
         app:cornerRadius="10dp"
@@ -103,7 +103,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/InvitadoButton"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_marginTop="16dp"
         android:text="Entrar como Invitad@"
         app:cornerRadius="10dp"
@@ -119,12 +119,12 @@
     <ImageView
         android:id="@+id/Animalitos"
         android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:src="@drawable/animales"
+        android:layout_height="500dp"
+        android:src="@drawable/dogss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/InvitadoButton"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
 
         />
 
