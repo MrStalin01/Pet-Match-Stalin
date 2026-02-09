@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView menuHamburguesa, closeMenu;
     ApiInterface api;
 
+    Button btn1, btn2, btn3, btn4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         searchBar = findViewById(R.id.searchBar);
         recyclerView = findViewById(R.id.characterRecycler);
+        btn1 = findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
+        btn4 = findViewById(R.id.btn4);
 
         drawerLayout = findViewById(R.id.main);
         navigationView = findViewById(R.id.navView);
@@ -54,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         api = ApiClient.getClient().create(ApiInterface.class);
+
+        btn1.setOnClickListener(v -> seleccionarBoton(btn1, "husky")); // Ejemplo: Adoptar carga huskys
+        btn2.setOnClickListener(v -> seleccionarBoton(btn2, "labrador"));
+        btn3.setOnClickListener(v -> seleccionarBoton(btn3, "beagle"));
+        btn4.setOnClickListener(v -> seleccionarBoton(btn4, "pug"));
+
+        seleccionarBoton(btn1, "husky");
 
         buscarPerro("husky");
 
@@ -76,7 +88,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
 
+    private void seleccionarBoton(Button boton, String raza) {
+        desmarcarTodos();
+        boton.setSelected(true); // Esto activa el state_selected="true" del XML
+        buscarPerro(raza);
+    }
+
+    private void desmarcarTodos() {
+        btn1.setSelected(false);
+        btn2.setSelected(false);
+        btn3.setSelected(false);
+        btn4.setSelected(false);
         //Menu desplegable
         menuHamburguesa.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.END));
 
