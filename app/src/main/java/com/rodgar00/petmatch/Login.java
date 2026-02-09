@@ -84,7 +84,7 @@ public class Login extends AppCompatActivity {
 
         FormUtils formUtils = new FormUtils();
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        String savedUserName = sharedPref.getString("userName", "");
+        String savedEmail = sharedPref.getString("email", "");
         String hashedPassword = sharedPref.getString("password", "");
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +100,7 @@ public class Login extends AppCompatActivity {
 
                 String inputText = loginTILUser.getEditText().getText().toString();
 
-                if (!formUtils.checkUser(inputText, savedUserName)) {
+                if (!formUtils.checkUser(inputText, savedEmail)) {
                     loginTILUser.setErrorEnabled(true);
                     loginTILUser.setError("Usuario incorrecto.");
                     canContinue = false;
