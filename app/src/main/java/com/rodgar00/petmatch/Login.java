@@ -102,7 +102,7 @@ public class Login extends AppCompatActivity {
 
                 if (!formUtils.checkUser(inputText, savedEmail)) {
                     loginTILUser.setErrorEnabled(true);
-                    loginTILUser.setError("Usuario incorrecto.");
+                    loginTILUser.setError("Email incorrecto.");
                     canContinue = false;
                 }
 
