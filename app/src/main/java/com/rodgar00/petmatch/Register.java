@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,7 @@ public class Register extends AppCompatActivity {
         });
 
         TextInputLayout registerTILemail = findViewById(R.id.RegisterTILEmail);
+        TextView loginTVInvitado = findViewById(R.id.LoginTVInvitado);
         TextInputLayout registerTILpassword = findViewById(R.id.RegisterTILPassword);
         TextInputLayout registerTILpasswordDoubleCheck = findViewById(R.id.RegisterTILPasswordConfirm);
         Button registerButton = findViewById(R.id.RegisterButton);
@@ -102,6 +104,15 @@ public class Register extends AppCompatActivity {
                 Toast.makeText(Register.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Register.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        loginTVInvitado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMain = new Intent(Register.this, MainActivity.class);
+                startActivity(intentMain);
+                finish();
             }
         });
 

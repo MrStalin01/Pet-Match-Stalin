@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Mi Perfil" />
+
+    <item
+        android:id="@+id/nav_pets"
+        android:title="Mascotas" />
+
+    <item
+        android:id="@+id/nav_exit"
+        android:title="Cerrar sesión" />
+
+</menu>

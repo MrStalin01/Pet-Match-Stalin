@@ -30,7 +30,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/RegisterGLh1"
         />
-
+    <TextView
+        android:id="@+id/LoginTVInvitado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión como invitado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RegisterTVRed"
+        android:layout_margin="30dp"
+        />
     <TextView
         android:id="@+id/RegisterAppName"
         android:layout_width="wrap_content"

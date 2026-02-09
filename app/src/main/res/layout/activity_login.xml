@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Teléfono, correo, usuario..."
                 android:inputType="textPersonName"
-                android:textSize="12dp"/>
+                android:textSize="12dp"
                 android:textColor="@color/black"
                 />
 
@@ -198,7 +198,7 @@
         />
 
     <TextView
-        android:id="@+id/TextView3"
+        android:id="@+id/LoginTVInvitado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Iniciar sesión como invitado"
@@ -209,13 +209,13 @@
         />
 
     <TextView
-        android:id="@+id/TextView4"
+        android:id="@+id/LoginTVRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¿No tienes una cuenta? Registrate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TextView3"
+        app:layout_constraintTop_toBottomOf="@id/LoginTVInvitado"
         android:layout_margin="90dp"
         />
 
