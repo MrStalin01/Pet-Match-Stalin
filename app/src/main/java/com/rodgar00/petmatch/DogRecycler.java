@@ -50,9 +50,9 @@ public class DogRecycler extends RecyclerView.Adapter<DogRecycler.DogViewHolder>
         holder.refugioText.setText("Refugio: " + dog.getEsRefugio());
 
         Glide.with(context)
-                .load(dog.getImagen())  // URL de imagen del backend
+                .load(dog.getImagen())
                 .centerCrop()
-                .placeholder(R.drawable.placeholder) // poner un placeholder mientras carga
+                .placeholder(R.drawable.placeholder)
                 .into(holder.dogImage);
     }
 
