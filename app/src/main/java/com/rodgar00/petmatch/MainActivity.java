@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.main);
         navigationView = findViewById(R.id.navView);
         menuHamburguesa = findViewById(R.id.menuHamburguesa);
+
         closeMenu = navigationView.getHeaderView(0).findViewById(R.id.Close);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -99,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Pets.class));
             } else if (item.getItemId() == R.id.nav_exit) {
                 startActivity(new Intent(MainActivity.this, Usuarios.class));
+            } else if (item.getItemId() == R.id.nav_refugio) {
+                Intent intent = new Intent(this, Refugio.class);
+                startActivity(intent);
             }
             drawerLayout.closeDrawer(GravityCompat.END);
             return true;
