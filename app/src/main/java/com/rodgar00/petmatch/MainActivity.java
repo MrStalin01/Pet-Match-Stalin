@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Gravity;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,8 +75,7 @@ public class MainActivity extends AppCompatActivity {
         // --- Barra de búsqueda (opcional) ---
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -86,25 +83,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-            }
+            public void afterTextChanged(Editable s) { }
         });
 
         // --- Menu lateral ---
         menuHamburguesa.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.END));
+
         closeMenu.setOnClickListener(v -> drawerLayout.closeDrawer(GravityCompat.END));
 
         navigationView.setNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.nav_profile) {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_profile) {
                 startActivity(new Intent(MainActivity.this, Profile.class));
-            } else if (item.getItemId() == R.id.nav_pets) {
+            } else if (id == R.id.nav_pets) {
                 startActivity(new Intent(MainActivity.this, Pets.class));
-            } else if (item.getItemId() == R.id.nav_exit) {
+            } else if (id == R.id.nav_exit) {
                 startActivity(new Intent(MainActivity.this, Usuarios.class));
-            } else if (item.getItemId() == R.id.nav_refugio) {
-                Intent intent = new Intent(this, Refugio.class);
-                startActivity(intent);
+            } else if (id == R.id.nav_refugio) {
+                startActivity(new Intent(MainActivity.this, Refugio.class));
             }
+
             drawerLayout.closeDrawer(GravityCompat.END);
             return true;
         });
