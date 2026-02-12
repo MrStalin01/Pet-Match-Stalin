@@ -1,26 +1,57 @@
 package com.rodgar00.petmatch;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class Refugio extends Activity {
 
+    ImageView closeMenu;
+    NavigationView navigationView;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_refugio);
 
-        final DrawerLayout drawerLayout = findViewById(R.id.main);
+        DrawerLayout drawerLayout = findViewById(R.id.main);
+
         ImageView menuHamburguesa = findViewById(R.id.menuHamburguesa);
+        closeMenu = findViewById(R.id.Close);
+        navigationView = findViewById(R.id.navView);
 
         menuHamburguesa.setOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.END);
+        });
+
+        closeMenu.setOnClickListener(v -> {
+            drawerLayout.closeDrawer(GravityCompat.END);
+        });
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_profile) {
+                startActivity(new Intent(Refugio.this, Profile.class));
+            } else if (id == R.id.nav_pets) {
+                startActivity(new Intent(Refugio.this, Pets.class));
+            } else if (id == R.id.nav_refugio) {
+                startActivity(new Intent(Refugio.this, Refugio.class));
+            } else if (id == R.id.nav_exit) {
+                startActivity(new Intent(Refugio.this, Usuarios.class));
+            }
+
+            drawerLayout.closeDrawer(GravityCompat.END);
+            return true;
         });
 
         //La tarjeta de cada Refugio
