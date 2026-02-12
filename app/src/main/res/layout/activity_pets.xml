@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Pets">
 
-    <ImageView
+
+    <LinearLayout
         android:id="@+id/tvLogo"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/pet_match2"
+        android:layout_width= "match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/TVlogoApp"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="1dp"
+            android:src="@drawable/pet_match2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/menuHamburguesa"
+            android:layout_width="32dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_menu"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
 
 
     <TextView
@@ -23,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="80dp"
         android:text="Mis Mascotas"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -34,7 +59,7 @@
         android:id="@+id/containerCards"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="150dp"
         android:orientation="horizontal"
         android:padding="8dp"
         android:weightSum="2"
@@ -121,11 +146,11 @@
                         />
 
 
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_edit"/>
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -133,6 +158,42 @@
 
 
     </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/drawer_header"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvSaludo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hola, Rescatador!"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/Close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_close"
+                android:contentDescription="Cerrar menú" />
+        </LinearLayout>
+
+    </com.google.android.material.navigation.NavigationView>
 
     <!--<com.google.android.material.button.MaterialButton
         android:id="@+id/btnAddPet"
@@ -153,4 +214,4 @@
         />
         -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -35,8 +35,6 @@
         <activity
             android:name=".Login"
             android:exported="false" />
-        <activity android:name=".Refugio"
-            android:exported="false"/>
         <activity
             android:name=".Profile"
             android:exported="false"/>
@@ -48,6 +46,8 @@
             android:exported="false"/>
 
 
+        <activity android:name=".Refugio"
+            android:exported="false"/>
     </application>
 
 </manifest>

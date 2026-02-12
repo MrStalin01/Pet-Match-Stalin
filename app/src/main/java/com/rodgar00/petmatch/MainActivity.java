@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.main);
         navigationView = findViewById(R.id.navView);
         menuHamburguesa = findViewById(R.id.menuHamburguesa);
+
         closeMenu = navigationView.getHeaderView(0).findViewById(R.id.Close);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Puedes implementar búsqueda dentro de dogList aquí
+                // Aquí puedes implementar búsqueda dentro de dogList si quieres
             }
 
             @Override
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         // --- Menu lateral ---
         menuHamburguesa.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.END));
+
         closeMenu.setOnClickListener(v -> drawerLayout.closeDrawer(GravityCompat.END));
 
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -104,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Profile.class));
             } else if (id == R.id.nav_pets) {
                 startActivity(new Intent(MainActivity.this, Pets.class));
-            } else if (id == R.id.nav_exit) {
-                startActivity(new Intent(MainActivity.this, Usuarios.class));
             } else if (id == R.id.nav_refugio) {
                 startActivity(new Intent(MainActivity.this, Refugio.class));
+            } else if (id == R.id.nav_exit) {
+                startActivity(new Intent(MainActivity.this, Usuarios.class));
             }
 
             drawerLayout.closeDrawer(GravityCompat.END);
