@@ -8,12 +8,12 @@
     <item
         android:id="@+id/nav_pets"
         android:title="Mascotas" />
-
-    <item
-        android:id="@+id/nav_exit"
-        android:title="Cerrar sesión" />
     <item
         android:id="@+id/nav_refugio"
         android:title="Refugio" />
+    <item
+        android:id="@+id/nav_exit"
+        android:title="Cerrar sesión" />
+
 
 </menu>

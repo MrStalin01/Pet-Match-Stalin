@@ -106,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Profile.class));
             } else if (id == R.id.nav_pets) {
                 startActivity(new Intent(MainActivity.this, Pets.class));
-            } else if (id == R.id.nav_exit) {
-                startActivity(new Intent(MainActivity.this, Usuarios.class));
             } else if (id == R.id.nav_refugio) {
                 startActivity(new Intent(MainActivity.this, Refugio.class));
+            } else if (id == R.id.nav_exit) {
+                startActivity(new Intent(MainActivity.this, Usuarios.class));
             }
 
             drawerLayout.closeDrawer(GravityCompat.END);
