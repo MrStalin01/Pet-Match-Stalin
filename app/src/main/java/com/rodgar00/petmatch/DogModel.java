@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class DogModel {
 
-    @SerializedName("id")
-    private int id;
-
     @SerializedName("nombre")
     private String nombre;
+
+    @SerializedName("duenyo")
+    private String duenyo;
 
     @SerializedName("edad")
     private int edad;
@@ -16,39 +16,39 @@ public class DogModel {
     @SerializedName("localizacion")
     private String localizacion;
 
-    @SerializedName("categoria")
-    private String categoria;
-
     @SerializedName("descripcion")
     private String descripcion;
 
-    @SerializedName("duenyo")
-    private String duenyo;
+    @SerializedName("categoria")
+    private String categoria;
 
-    @SerializedName("slug")
-    private String slug;
+    @SerializedName("esRefugio")
+    private boolean esRefugio;
 
+    // Imagen como URL o null (si quieres subir foto, hay que usar Multipart)
     @SerializedName("imagen")
     private String imagen;
 
-    @SerializedName("es_refugio_texto")
-    private String esRefugio;
-
-    // Constructor para URL simple (puede usarse en mocks)
-    public DogModel(String nombre, String imagen) {
+    // Constructor
+    public DogModel(String nombre, String duenyo, int edad, String localizacion,
+                    String descripcion, String categoria, boolean esRefugio, String imagen) {
         this.nombre = nombre;
+        this.duenyo = duenyo;
+        this.edad = edad;
+        this.localizacion = localizacion;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.esRefugio = esRefugio;
         this.imagen = imagen;
     }
 
-    // Getters
-    public int getId() { return id; }
+    // Getters si necesitas
     public String getNombre() { return nombre; }
+    public String getDuenyo() { return duenyo; }
     public int getEdad() { return edad; }
     public String getLocalizacion() { return localizacion; }
-    public String getCategoria() { return categoria; }
     public String getDescripcion() { return descripcion; }
-    public String getDuenyo() { return duenyo; }
-    public String getSlug() { return slug; }
+    public String getCategoria() { return categoria; }
+    public boolean getEsRefugio() { return esRefugio; }
     public String getImagen() { return imagen; }
-    public String getEsRefugio() { return esRefugio; }
 }

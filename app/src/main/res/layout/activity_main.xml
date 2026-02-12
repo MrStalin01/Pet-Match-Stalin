@@ -56,7 +56,7 @@
                 android:id="@+id/searchBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Introduce una raza"
+                android:hint="Introduce un nombre"
                 android:imeOptions="actionSearch"
                 android:inputType="text"
                 android:padding="12dp"
