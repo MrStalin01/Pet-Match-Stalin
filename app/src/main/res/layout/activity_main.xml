@@ -9,170 +9,193 @@
     android:background="@color/blanco_hueso"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <!--  FRAMELAYOUT PARA QUE EL FAB FLUYA -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingBottom="20dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/logoApp"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/pet_match2"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-
-            <ImageView
-                android:id="@+id/menuHamburguesa"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/ic_menu"
-                android:clickable="true"
-                android:focusable="true" />
-        </LinearLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:elevation="6dp"
-            app:boxBackgroundMode="none"
-            android:background="@drawable/bg_button_normal"
-            android:textColorHint="@color/Placeholder">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/searchBar"
+            <!-- LOGO Y MENÚ -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Introduce una raza"
-                android:imeOptions="actionSearch"
-                android:inputType="text"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:background="@android:color/transparent"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="20dp">
 
+                <ImageView
+                    android:id="@+id/logoApp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pet_match2" />
 
-        <LinearLayout
-            android:id="@+id/buttonRow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="10dp"
-            android:clipToPadding="false"
-            android:clipChildren="false"
-            android:layout_marginBottom="1dp"
-            android:layout_marginTop="8dp">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/btn1"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
+                <ImageView
+                    android:id="@+id/menuHamburguesa"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_menu"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <!-- BÚSQUEDA -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:elevation="6dp"
+                app:boxBackgroundMode="none"
+                android:background="@drawable/bg_button_normal"
+                android:textColorHint="@color/Placeholder">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Introduce una raza"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textColor="@color/black"
+                    android:background="@android:color/transparent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- BOTONES -->
+            <LinearLayout
+                android:id="@+id/buttonRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:clipChildren="false">
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:elevation="8dp"
+                    android:translationZ="4dp"
+                    android:stateListAnimator="@null"
+                    android:background="@drawable/btn_selector"
+                    app:backgroundTint="@null"
+                    android:text="Adoptar🐾"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:elevation="8dp"
+                    android:translationZ="4dp"
+                    android:stateListAnimator="@null"
+                    android:background="@drawable/btn_selector"
+                    app:backgroundTint="@null"
+                    android:text="Encontrados"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:elevation="8dp"
+                    android:translationZ="4dp"
+                    android:stateListAnimator="@null"
+                    android:background="@drawable/btn_selector"
+                    app:backgroundTint="@null"
+                    android:text="Perdidos"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:elevation="8dp"
+                    android:translationZ="4dp"
+                    android:stateListAnimator="@null"
+                    android:background="@drawable/btn_selector"
+                    app:backgroundTint="@null"
+                    android:text="Favoritos❤️"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <!-- RECYCLER VIEW -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/characterRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:elevation="8dp"
-                android:translationZ="4dp"
-                android:stateListAnimator="@null"
-                android:background="@drawable/btn_selector"
-                app:backgroundTint="@null"
-                android:text="Adoptar🐾"
-                android:textSize="11sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btn2"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:elevation="8dp"
-                android:translationZ="4dp"
-                android:stateListAnimator="@null"
-                android:background="@drawable/btn_selector"
-                app:backgroundTint="@null"
-                android:text="Encontrados"
-                android:textSize="11sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btn3"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:elevation="8dp"
-                android:translationZ="4dp"
-                android:stateListAnimator="@null"
-                android:background="@drawable/btn_selector"
-                app:backgroundTint="@null"
-                android:text="Perdidos"
-                android:textSize="11sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btn4"
-                android:layout_width="0dp"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:elevation="8dp"
-                android:translationZ="4dp"
-                android:stateListAnimator="@null"
-                android:background="@drawable/btn_selector"
-                app:backgroundTint="@null"
-                android:text="Favoritos❤️"
-                android:textSize="11sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textAllCaps="false" />
+                android:layout_marginTop="8dp" />
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/characterRecycler"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="8dp" />
+        <!-- FAB  -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Añadir"
+            android:src="@drawable/ic_add"
+            app:fabSize="mini"
+            app:tint="@android:color/white"
+            app:elevation="12dp"
+            app:backgroundTint="@color/button_text"
+            />
 
-    </LinearLayout>
+    </FrameLayout>
 
+    <!-- MENÚ LATERAL -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/drawer_header"
-        >
+        app:headerLayout="@layout/drawer_header">
 
         <LinearLayout
             android:layout_width="match_parent"
