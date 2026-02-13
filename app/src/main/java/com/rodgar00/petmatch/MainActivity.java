@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText searchBar;
     RecyclerView recyclerView;
     DogRecycler adapter;
+
     ArrayList<DogModel> dogList = new ArrayList<>();
+    ArrayList<DogModel> listaCompleta = new ArrayList<>(); // <- copia original
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         api = ApiClient.getClient().create(ApiInterface.class);
 
-        // --- Botones ---
+        // --- Botones (NO se modifican) ---
         btn1.setOnClickListener(v -> seleccionarBoton(btn1, "adoptados"));
         btn2.setOnClickListener(v -> seleccionarBoton(btn2, "encontrados"));
         btn3.setOnClickListener(v -> seleccionarBoton(btn3, "perdidos"));
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Carga inicial
         seleccionarBoton(btn1, "adoptados");
+
         // --- Floating Action Button ---
         FloatingActionButton buttonAdd = findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(v -> {
@@ -79,24 +82,36 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-        // --- Barra de búsqueda (opcional) ---
+        // --- Barra de búsqueda ---
         searchBar.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // Aquí puedes implementar búsqueda dentro de dogList si quieres
+
+                String texto = s.toString().toLowerCase();
+                dogList.clear();
+
+                if (texto.isEmpty()) {
+                    dogList.addAll(listaCompleta);
+                } else {
+                    for (DogModel dog : listaCompleta) {
+                        if (dog.getRaza().toLowerCase().contains(texto)) {
+                            dogList.add(dog);
+                        }
+                    }
+                }
+
+                adapter.notifyDataSetChanged();
             }
 
             @Override
-            public void afterTextChanged(Editable s) { }
+            public void afterTextChanged(Editable s) {}
         });
 
         // --- Menu lateral ---
         menuHamburguesa.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.END));
-
         closeMenu.setOnClickListener(v -> drawerLayout.closeDrawer(GravityCompat.END));
 
         navigationView.setNavigationItemSelectedListener(item -> {
@@ -133,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
     // --- Buscar animales según tabla ---
     private void buscarAnimales(String tabla) {
-        dogList.clear();
+
         Call<List<DogModel>> call;
 
         switch (tabla) {
@@ -157,8 +172,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<DogModel>> call, Response<List<DogModel>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    dogList.addAll(response.body());
+
+                    listaCompleta.clear();
+                    listaCompleta.addAll(response.body());
+
+                    dogList.clear();
+                    dogList.addAll(listaCompleta);
+
                     adapter.notifyDataSetChanged();
+
                 } else {
                     Toast.makeText(MainActivity.this,
                             "Error en la respuesta: " + response.code(),
@@ -171,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,
                         "Error de conexión: " + t.getMessage(),
                         Toast.LENGTH_LONG).show();
-                t.printStackTrace(); // Para ver detalles en Logcat
+                t.printStackTrace();
             }
         });
     }

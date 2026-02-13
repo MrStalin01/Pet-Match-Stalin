@@ -9,6 +9,8 @@ import retrofit2.Call;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
+
 public interface ApiInterface {
     @Multipart
     @POST("crear_animal/") // <-- cambiar la URL a la nueva
@@ -23,6 +25,8 @@ public interface ApiInterface {
             @Part MultipartBody.Part imagen
     );
 
+    @GET("api/{tablas}")
+    Call<List<DogModel>> getAnimalesMultiples(@Path("tablas") String tablas);
 
     @GET("adoptados/")
     Call<List<DogModel>> getAdoptados();
