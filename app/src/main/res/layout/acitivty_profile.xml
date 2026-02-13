@@ -6,15 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <ImageView
+    <LinearLayout
         android:id="@+id/tvLogo"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/pet_match2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="20dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/logoApp"
+            android:layout_marginTop="5dp"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pet_match2"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/menuHamburguesa"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_menu"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvTitle"

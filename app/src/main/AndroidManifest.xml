@@ -44,6 +44,8 @@
         <activity
             android:name=".AgregarAnimalActivity"
             android:exported="false"/>
+        <activity android:name=".ProfileDog"
+            android:exported="false"/>
 
 
         <activity android:name=".Refugio"

@@ -32,6 +32,8 @@ public class DogModel {
     @SerializedName("imagen")
     private String imagen;
 
+
+
     // Constructor
     public DogModel(String nombre, String duenyo, int edad, String localizacion,
                     String descripcion, String categoria, boolean esRefugio, String imagen) {
