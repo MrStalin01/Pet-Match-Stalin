@@ -7,6 +7,9 @@ public class DogModel {
     @SerializedName("nombre")
     private String nombre;
 
+    @SerializedName("raza")
+    private String raza;
+
     @SerializedName("duenyo")
     private String duenyo;
 
@@ -48,6 +51,7 @@ public class DogModel {
     public int getEdad() { return edad; }
     public String getLocalizacion() { return localizacion; }
     public String getDescripcion() { return descripcion; }
+    public String getRaza() { return raza; }
     public String getCategoria() { return categoria; }
     public boolean getEsRefugio() { return esRefugio; }
     public String getImagen() { return imagen; }
