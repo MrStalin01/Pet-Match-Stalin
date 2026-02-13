@@ -25,6 +25,13 @@ public class Refugio extends Activity {
 
         DrawerLayout drawerLayout = findViewById(R.id.main);
 
+        ImageView logoApp = findViewById(R.id.logoApp);
+
+        logoApp.setOnClickListener(v -> {
+            Intent intent = new Intent(Refugio.this, MainActivity.class);
+            startActivity(intent);
+        });
+
         ImageView menuHamburguesa = findViewById(R.id.menuHamburguesa);
         closeMenu = findViewById(R.id.Close);
         navigationView = findViewById(R.id.navView);

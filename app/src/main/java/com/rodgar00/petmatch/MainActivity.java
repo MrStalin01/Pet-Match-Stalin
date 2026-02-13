@@ -74,8 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Carga inicial
         seleccionarBoton(btn1, "adoptados");
-
-        // --- Floating Action Button ---
+        // Floating Action Button
         FloatingActionButton buttonAdd = findViewById(R.id.buttonAdd);
         buttonAdd.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AgregarAnimalActivity.class);

@@ -21,11 +21,18 @@ public class Pets extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pets);
 
+        ImageView logoApp = findViewById(R.id.logoApp);
+
         DrawerLayout drawerLayout = findViewById(R.id.main);
 
         ImageView menuHamburguesa = findViewById(R.id.menuHamburguesa);
         closeMenu = findViewById(R.id.Close);
         navigationView = findViewById(R.id.navView);
+
+        logoApp.setOnClickListener(v ->{
+            Intent intent = new Intent(Pets.this, MainActivity.class);
+            startActivity(intent);
+        });
 
         menuHamburguesa.setOnClickListener(v -> {
             drawerLayout.openDrawer(GravityCompat.END);

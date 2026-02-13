@@ -7,7 +7,7 @@
     tools:context=".Profile">
 
     <ImageView
-        android:id="@+id/tvLogo"
+        android:id="@+id/logoApp"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogo" />
+        app:layout_constraintTop_toBottomOf="@+id/logoApp" />
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivProfilePicture"
